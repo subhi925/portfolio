@@ -1,0 +1,25 @@
+.grid-container{
+    display: grid;
+    grid-template-areas: 'header header header'
+                         'nav main aside'
+                         'footer footer footer';
+    justify-items: center;
+    align-items: center;
+    gap: 10px;
+}
+
+.myheader {
+    grid-area: header;
+    padding: 10px;
+    text-align: center;
+    margin: 150px;
+}
+.profile-pic{
+    width: 250px;
+    height: 250px;
+    border-radius: 50%;
+}
+.skills{
+    text-align: left;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
