@@ -1,25 +1,222 @@
-.grid-container{
-    display: grid;
-    grid-template-areas: 'header header header'
-                         'nav main aside'
-                         'footer footer footer';
-    justify-items: center;
-    align-items: center;
-    gap: 10px;
+body {
+  background-color: #f0f0f0;
+  animation: fadeIn 1s ease-in; /* ease-in animation that gradually fades in the background */
 }
 
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+/*grid */
+.grid-container {
+  display: grid;
+  grid-template-areas:
+    "header header header"
+    "nav main aside";
+  gap: 20px;
+  background-color: #f0f0f0;
+  height: 100vh;
+  padding: 0px 20px;
+}
 .myheader {
-    grid-area: header;
-    padding: 10px;
-    text-align: center;
-    margin: 150px;
+  grid-area: header;
+  height: 250px;
 }
-.profile-pic{
-    width: 250px;
-    height: 250px;
-    border-radius: 50%;
+.profile-pic {
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
 }
-.skills{
-    text-align: left;
-    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+.my-name {
+  position: absolute;
+  top: 80px;
+  font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
+    "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
+}
+.job-title {
+  align-items: center;
+
+  justify-content: center;
+  font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
+    "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
+}
+.special-skills {
+  align-items: center;
+  justify-content: center;
+  font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
+    "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
+}
+.special-skills::after {
+  content: "";
+  animation: skills 4s infinite;
+}
+
+@keyframes skills {
+  0%,
+  100% {
+    content: " ";
+    color: black;
+    opacity: 0;
+  }
+  15% {
+    content: "| HTML";
+    color: blue;
+    opacity: 1;
+  }
+  30% {
+    content: "| CSS";
+    color: blue;
+    opacity: 1;
+  }
+  45% {
+    content: "| JavaScript";
+    color: blue;
+    opacity: 1;
+  }
+  60% {
+    content: "| React";
+    color: blue;
+    opacity: 1;
+  }
+  75% {
+    content: " | PHP";
+    color: blue;
+    opacity: 1;
+  }
+  90% {
+    content: "| MySQL";
+    color: blue;
+    opacity: 1;
+  }
+}
+.nav-bar {
+  position: absolute;
+  top: 200px;
+  grid-area: nav;
+  background-color: rgb(153, 216, 235);
+  width: 200px;
+  height: 300px;
+  box-shadow: 2px 1px 3px rgba(8, 8, 8, 0.445);
+  border-radius: 10px;
+}
+ul {
+  font-size: 20px;
+  padding: 15px;
+}
+li {
+  list-style-type: none;
+  border: solid 1px gray;
+  width: 150px;
+  padding: 10px;
+  align-items: center;
+  display: flex;
+  justify-content: center;
+  backdrop-filter: blur(10px); /* Frosted glass effect */
+  margin-bottom: 10px;
+  border-radius: 8px;
+  box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.1);
+}
+li:hover {
+  font-weight: bold;
+  cursor: pointer;
+  animation: colorhover 4s infinite;
+}
+.active {
+  background-color: goldenrod;
+  font-weight: bold;
+}
+.active:hover {
+  animation: none;
+}
+
+@keyframes colorhover {
+  0% {
+    background-color: goldenrod;
+  }
+  25% {
+    background-color: orange;
+  }
+  75% {
+    background-color: yellow;
+  }
+  50% {
+    background-color: gold;
+  }
+  100% {
+    background-color: goldenrod;
+  }
+}
+.main-contant {
+  grid-area: main;
+  position: absolute;
+  top: 200px;
+  left: 250px;
+  width: 60%;
+  background-color: white;
+  padding: 20px;
+  box-shadow: 2px 1px 3px rgba(8, 8, 8, 0.445);
+  border-radius: 10px;
+  height: 70vh;
+  overflow: auto;
+}
+
+/* Responsive Design */
+@media screen and (max-width: 900px) {
+  .grid-container {
+    grid-template-areas:
+      "header"
+      "nav"
+      "main"
+      "aside";
+    grid-template-columns: 1fr;
+    gap: 10px;
+    padding: 5px;
+  }
+  .nav-bar {
+    width: 95%;
+    height: 15%;
+    display: table-row;
+  }
+  ul li {
+    float: left;
+    margin: 5px;
+  }
+  .main-contant {
+    position: relative;
+    left: 10px;
+
+    width: 91%;
+  }
+}
+@media screen and (max-width: 450px) {
+  .grid-container {
+    grid-template-areas:
+      "header"
+      "nav"
+      "main"
+      "aside";
+    grid-template-columns: 1fr;
+    gap: 10px;
+    padding: 5px;
+  }
+  .nav-bar {
+    width: 95%;
+    height: 8%;
+    display: table-row;
+  }
+  ul {
+    font-size: 15px;
+    padding: 2px;
+  }
+  li {
+    width: 40px;
+  }
+  ul li {
+    float: left;
+    margin: 5px;
+  }
 }
