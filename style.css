@@ -1,16 +1,7 @@
 body {
   background-color: #f0f0f0;
-  animation: fadeIn 1s ease-in; /* ease-in animation that gradually fades in the background */
 }
 
-@keyframes fadeIn {
-  from {
-    opacity: 0;
-  }
-  to {
-    opacity: 1;
-  }
-}
 /*grid */
 .grid-container {
   display: grid;
@@ -170,7 +161,33 @@ a {
 .social-links {
   margin-top: 20px;
 }
-
+.github {
+  margin-right: 10px;
+  background-color: black;
+  padding: 5px;
+  border-radius: 5px;
+  cursor: pointer;
+}
+.facebook {
+  margin-right: 10px;
+  background-color: blue;
+  padding: 5px;
+  border-radius: 5px;
+  cursor: pointer;
+}
+.linkedin {
+  margin-right: 10px;
+  background-color: blue;
+  padding: 5px;
+  border-radius: 5px;
+  cursor: pointer;
+}
+.facebook a,
+.linkedin a,
+.github a {
+  color: white;
+  text-decoration: none;
+}
 /* Responsive Design */
 @media screen and (max-width: 900px) {
   .grid-container {
